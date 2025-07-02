@@ -1,32 +1,36 @@
 def chatbot():
-    print("Chatbot: Hi! I'm your assistant. How can I help you today?")
+    print("🤖 Hello! I'm ChatBot. Type 'bye' to exit.")
     
     while True:
         user_input = input("You: ").lower()
 
-        if "hello" in user_input or "hi" in user_input:
-            print("Chatbot: Hello there! How can I assist you?")
+        if user_input in ["hi", "Hi", "Hello", "hello", "Hey", "hey"]:
+            print("Bot: Hello there! How can I help you?")
+        
+        elif "What is your name" in user_input:
+            print("Bot: I'm a simple rule-based chatbot created in Python.")
         
         elif "how are you" in user_input:
-            print("Chatbot: I'm just a bunch of code, but thanks for asking! How can I help?")
+            print("Bot: I'm doing great! Thanks for asking.")
         
-        elif "your name" in user_input:
-            print("Chatbot: I'm RuleBot, your simple chatbot assistant!")
+        elif "tell me what is the time" in user_input:
+            from datetime import datetime
+            now = datetime.now().strftime("%H:%M:%S")
+            print(f"Bot: The current time is {now}")
         
-        elif "help" in user_input:
-            print("Chatbot: Sure! I can answer simple questions or just chat with you.")
+        elif "tell me today's date" in user_input:
+            from datetime import date
+            today = date.today()
+            print(f"Bot: Today's date is {today}")
+        
+        elif "I need your help" in user_input:
+            print("Bot: I can help you with basic info like time, date, greetings, and more!")
         
         elif "bye" in user_input or "exit" in user_input:
-            print("Chatbot: Goodbye! Have a great day.")
+            print("Bot: Goodbye! Have a great day! 👋")
             break
         
-        elif "time" in user_input:
-            from datetime import datetime
-            now = datetime.now()
-            print(f"Chatbot: The current time is {now.strftime('%H:%M:%S')}")
-        
         else:
-            print("Chatbot: Sorry, I didn't understand that. Can you rephrase?")
+            print("Bot: I'm not sure how to respond to that. Can you rephrase?")
 
-# Run the chatbot
 chatbot()
